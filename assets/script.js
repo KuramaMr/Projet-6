@@ -17,10 +17,16 @@ const slides = [
 	}
 ]
 
-let baliseArrowLeft = document.getElementsByClassName("arrow_left");
-baliseArrowLeft.addEventlistener("click",() => {
-	console.log("Vous avez cliquer à gauche")
-});
 
-let baliseArrowRight = document.getElementsByClassName("arrow_right");
-console.log(baliseArrowRight);
+let baliseArrowLeft = document.getElementById("carrousel_arrow_left");
+
+baliseArrowLeft.addEventListener("click", () => {
+	console.log('Vous avez cliqué à gauche')
+	})
+
+	
+let baliseArrowRight = document.getElementById("carrousel_arrow_right");
+
+baliseArrowRight.addEventListener("click", () => {
+	console.log('Vous avez cliqué à droite')
+})
