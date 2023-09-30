@@ -142,9 +142,10 @@ header {
 }
 /* Gestion des points du carrousel */
 .dots {
-	position: absolute;
+	position: relative;
 	bottom: 40px;
 	display: flex;
+	margin-left: 48%;
 }
 .dot {
 	margin-inline: 5px;

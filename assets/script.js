@@ -17,12 +17,21 @@ const slides = [
 	}
 ]
 
+const slidesBanner = document.getElementById("banner");
+const slide = document.getElementsByClassName("arrow");
+const nextButton = document.getElementsByClassName("arrow_left");
+const prevButton = document.getElementsByClassName("arrow_right");
+
+nextButton.addEventListener("click", () => {
+	const slideWidth = slide.clientWidth;
+	slidesContainer.scrollLeft += slideWidth;
+  });
 
 let baliseArrowLeft = document.getElementById("carrousel_arrow_left");
 
-baliseArrowLeft.addEventListener("click", () => {
+baliseArrowLeft.addEventListener("click", (ChangeSlide) => {
 	console.log('Vous avez cliqué à gauche')
-	})
+})
 
 	
 let baliseArrowRight = document.getElementById("carrousel_arrow_right");
