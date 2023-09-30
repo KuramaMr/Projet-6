@@ -16,20 +16,12 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+let curSlide = 0;
 
-const slidesBanner = document.getElementById("banner");
-const slide = document.getElementsByClassName("arrow");
-const nextButton = document.getElementsByClassName("arrow_left");
-const prevButton = document.getElementsByClassName("arrow_right");
+const baliseArrowLeft = document.getElementById("carrousel_arrow_left");
 
-nextButton.addEventListener("click", () => {
-	const slideWidth = slide.clientWidth;
-	slidesContainer.scrollLeft += slideWidth;
-  });
-
-let baliseArrowLeft = document.getElementById("carrousel_arrow_left");
-
-baliseArrowLeft.addEventListener("click", (ChangeSlide) => {
+baliseArrowLeft.addEventListener("click", () => {
+	curSlide++;
 	console.log('Vous avez cliqué à gauche')
 })
 
