@@ -19,14 +19,29 @@ const slides = [
 
 let baliseArrowLeft = document.getElementById("carrousel_arrow_left");
 
-baliseArrowLeft.addEventListener("click", () => {
-	console.log('Vous avez cliqué à gauche')
-	})
-
-	
 let baliseArrowRight = document.getElementById("carrousel_arrow_right");
+
+let bulletPointSelected = document.querySelector(".dot_selected");
+
+let bulletPoint = document.querySelector(".dot");
+
+
+baliseArrowLeft.addEventListener("click", (selectNext) => {
+	console.log('Vous avez cliqué à gauche')
+})
 
 baliseArrowRight.addEventListener("click", () => {
 	console.log('Vous avez cliqué à droite')
 })
 
+function selectNext() {
+	let currentDot = document.querySelector(".dot_selected");
+	let nextDot = currentDot.nextElementSibling;
+
+	if(nextDot) {
+		currentDot.classList.remove(".dot_selected");
+		console.log("Removed")
+		nextDot.classList.add(".dot_selected");
+		console.log("add")
+	}
+}
