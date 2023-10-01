@@ -16,18 +16,16 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-let curSlide = 0;
 
-const baliseArrowLeft = document.getElementById("carrousel_arrow_left");
+let arrow_left = document.getElementsByClassName("arrow_left");
 
-baliseArrowLeft.addEventListener("click", () => {
-	curSlide++;
-	console.log('Vous avez cliqué à gauche')
+let arrow_right = document.getElementsByClassName("arrow_right");
+
+arrow_left.addEventListener("click", () => {
+	console.log("Vous avez cliquer à gauche.")
 })
 
-	
-let baliseArrowRight = document.getElementById("carrousel_arrow_right");
-
-baliseArrowRight.addEventListener("click", () => {
-	console.log('Vous avez cliqué à droite')
+arrow_right.addEventListener("click", () => {
+	console.log("Vous avez cliquer à droite.")
 })
+
