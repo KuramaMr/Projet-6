@@ -17,20 +17,29 @@ const slides = [
 	}
 ]
 
-let baliseArrowLeft = document.getElementById("carrousel_arrow_left");
+const baliseArrowLeft = document.getElementById("carrousel_arrow_left");
 
-let baliseArrowRight = document.getElementById("carrousel_arrow_right");
+const baliseArrowRight = document.getElementById("carrousel_arrow_right");
 
 let bulletPointSelected = document.querySelector(".dot_selected");
 
 let bulletPoint = document.querySelector(".dot");
 
+let currentIndex = 0;
 
-baliseArrowLeft.addEventListener("click", (selectNext) => {
+baliseArrowLeft.addEventListener("click", () => {
+	if (currentIndex - 1 >= 0) {
+		currentIndex--;
+		showImage(currentIndex);
+	}
 	console.log('Vous avez cliqué à gauche')
 })
 
 baliseArrowRight.addEventListener("click", () => {
+	if (currentIndex + 1 >= 3) {
+		currentIndex++;
+		showImage(currentIndex);
+	}
 	console.log('Vous avez cliqué à droite')
 })
 
