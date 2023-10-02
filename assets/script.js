@@ -34,14 +34,4 @@ baliseArrowRight.addEventListener("click", () => {
 	console.log('Vous avez cliqué à droite')
 })
 
-function selectNext() {
-	let currentDot = document.querySelector(".dot_selected");
-	let nextDot = currentDot.nextElementSibling;
 
-	if(nextDot) {
-		currentDot.classList.remove(".dot_selected");
-		console.log("Removed")
-		nextDot.classList.add(".dot_selected");
-		console.log("add")
-	}
-}
