@@ -20,13 +20,10 @@
 <main>
 	<div id="banner">
 		<div class="arrow">
-			<img class="banner-img" src="./assets/images/slideshow/slide1.jpg" alt="Banner Print-it">
-			<img class="banner-img" src="./assets/images/slideshow/slide2.jpg" alt="Banner Print-it">
-			<img class="banner-img" src="./assets/images/slideshow/slide3.jpg" alt="Banner Print-it">
-			<img class="banner-img" src="./assets/images/slideshow/slide4.png" alt="Banner Print-it">
-			<p>Impressions tous formats <span>en boutique et en ligne</span></p>
-		<input type="image" class="arrow_left" id="carrousel_arrow_left" src="assets/images/arrow_left.png">
-		<input type="image" class="arrow_right" id="carrousel_arrow_right" src="assets/images/arrow_right.png">
+			<img id="slide" class="banner-img" src="./assets/images/slideshow/slide1.jpg" alt="Banner Print-it">
+			<p id="textInfo">Impressions tous formats <span>en boutique et en ligne</span></p>
+		<input type="image" class="arrow_left" id="arrowLeft" src="assets/images/arrow_left.png" onclick="ChangeSlide(-1)">
+		<input type="image" class="arrow_right" id="arrowRight" src="assets/images/arrow_right.png" onclick="ChangeSlide(1)">
 		</div>
 
 		<div class="dots">

@@ -17,30 +17,27 @@ const slides = [
 	}
 ]
 
-const baliseArrowLeft = document.getElementById("carrousel_arrow_left");
+const arrowLeft = document.getElementById("arrowLeft");
+const arrowRight = document.getElementById("arrowRight");
+const dotSelected = document.getElementById("dot_selected");
+const dot = document.getElementById("dot")
+let image = document.getElementById("slide");
+let textInfo = document.getElementById("textInfo");
 
-const baliseArrowRight = document.getElementById("carrousel_arrow_right");
 
-const bulletPointSelected = document.querySelector(".dot_selected");
+let numero = 0
+	
 
-const bulletPoint = document.querySelector(".dot");
-
-let currentIndex = 0;
-
-baliseArrowLeft.addEventListener("click", () => {
-	if (currentIndex - 1 >= 0) {
-		currentIndex--;
-		showImage(currentIndex);
-	}
-	console.log('Vous avez cliqué à gauche')
-})
-
-baliseArrowRight.addEventListener("click", () => {
-	if (currentIndex + 1 >= 3) {
-		currentIndex++;
-		showImage(currentIndex);
-	}
-	console.log('Vous avez cliqué à droite')
-})
+function ChangeSlide(sens) {
+	numero = numero + sens;
+	console.log(numero)
+	if (numero > 3)
+		numero = 0;
+	if (numero < 0 )
+		numero = 3;
+	image.setAttribute("src","./assets/images/slideshow/" + slides[numero].image);
+	document.getElementById("textInfo").innerHTML = slides[numero].tagLine;
+	
+}
 
 
