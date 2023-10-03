@@ -21,9 +21,9 @@ const baliseArrowLeft = document.getElementById("carrousel_arrow_left");
 
 const baliseArrowRight = document.getElementById("carrousel_arrow_right");
 
-let bulletPointSelected = document.querySelector(".dot_selected");
+const bulletPointSelected = document.querySelector(".dot_selected");
 
-let bulletPoint = document.querySelector(".dot");
+const bulletPoint = document.querySelector(".dot");
 
 let currentIndex = 0;
 
