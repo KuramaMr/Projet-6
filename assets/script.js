@@ -17,13 +17,13 @@ const slides = [
 	}
 ]
 
+
 const arrowLeft = document.getElementById("arrowLeft");
 const arrowRight = document.getElementById("arrowRight");
-const dotSelected = document.getElementById("dot_selected");
-const dot = document.getElementById("dot")
 let image = document.getElementById("slide");
 let textInfo = document.getElementById("textInfo");
-
+let nbElement = slides.length - 1;
+const dots = document.querySelector(".dot");
 
 let numero = 0
 	
@@ -37,7 +37,14 @@ function ChangeSlide(sens) {
 		numero = 3;
 	image.setAttribute("src","./assets/images/slideshow/" + slides[numero].image);
 	document.getElementById("textInfo").innerHTML = slides[numero].tagLine;
-	
-}
+};
+
+
+function dotSelected(sens){
+if (dots === numero){
+	dots.classList.add("dot_selected");
+	} else {
+	dots.classList.remove("dot_selected");
+}} 
 
 
