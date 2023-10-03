@@ -20,13 +20,26 @@ const slides = [
 
 const arrowLeft = document.getElementById("arrowLeft");
 const arrowRight = document.getElementById("arrowRight");
+const dots = document.querySelector(".dot");
 let image = document.getElementById("slide");
 let textInfo = document.getElementById("textInfo");
-let nbElement = slides.length - 1;
-const dots = document.querySelector(".dot");
-
 let numero = 0
-	
+
+arrowLeft.addEventListener('click', function(ChangeSlide){
+	if(nextDot <= 0) {
+		nextDot = numero;
+	} else {
+		nextDot--
+	}
+})
+
+arrowRight.addEventListener('click', function(ChangeSlide){
+	if(nextDot >= numero) {
+		nextDot = 0;
+	} else {
+		nextDot++
+	}
+})
 
 function ChangeSlide(sens) {
 	numero = numero + sens;
@@ -37,14 +50,13 @@ function ChangeSlide(sens) {
 		numero = 3;
 	image.setAttribute("src","./assets/images/slideshow/" + slides[numero].image);
 	document.getElementById("textInfo").innerHTML = slides[numero].tagLine;
+	let currentDot = document.querySelector(".dot_selected");
+	let nextDot = currentDot.nextElementSibling;
+	
+	if(nextDot) {
+		currentDot.classList.remove("dot_selected")
+		nextDot.classList.add("dot_selected")
+	}
+	console.log("ça change !");
 };
-
-
-function dotSelected(sens){
-if (dots === numero){
-	dots.classList.add("dot_selected");
-	} else {
-	dots.classList.remove("dot_selected");
-}} 
-
-
+document.getElementById("textInfo").
