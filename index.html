@@ -20,17 +20,21 @@
 <main>
 	<div id="banner">
 		<div class="arrow">
-			<img id="slide" class="banner-img" src="./assets/images/slideshow/slide1.jpg" alt="Banner Print-it">
-			<p id="textInfo">Impressions tous formats <span>en boutique et en ligne</span></p>
-		<input type="image" class="arrow_left" id="arrowLeft" src="assets/images/arrow_left.png" onclick="ChangeSlide(-1)">
-		<input type="image" class="arrow_right" id="arrowRight" src="assets/images/arrow_right.png" onclick="ChangeSlide(1)">
+			    <img id="slide" class="banner-img" src="./assets/images/slideshow/slide1.jpg" alt="Banner Print-it">
+			    <p id="textInfo">Impressions tous formats <span>en boutique et en ligne</span></p>
+		    <div class="arrow_left">
+                <img src="assets/images/arrow_left.png">
+            </div>
+            <div class="arrow_right">
+                <img src="assets/images/arrow_right.png">
+            </div>
 		</div>
 
-		<div id="dots" class="dots">
-			<a id="dot" class="dot dot_selected" onclick="ChangeSlide()"></a>
-			<a id="dot" class="dot" onclick="ChangeSlide()"></a>
-			<a id="dot" class="dot" onclick="ChangeSlide()"></a>
-			<a id="dot" class="dot" onclick="ChangeSlide()"></a>
+		<div class="dots">
+			<a class="dot dot_selected"></a>
+			<a class="dot"></a>
+			<a class="dot"></a>
+			<a class="dot"></a>
 		</div>
 	</div>
 	<section id="about-us" class="container">

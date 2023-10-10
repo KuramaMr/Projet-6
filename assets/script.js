@@ -17,46 +17,45 @@ const slides = [
 	}
 ]
 
+let etape = 0;
 
-const arrowLeft = document.getElementById("arrowLeft");
-const arrowRight = document.getElementById("arrowRight");
-const dots = document.querySelector(".dot");
+let nbr__img = slides.length;
+
+let precedent = document.querySelector('.arrow_left');
+let suivant = document.querySelector('.arrow_right');
 let image = document.getElementById("slide");
 let textInfo = document.getElementById("textInfo");
-let numero = 0
+const dots = document.querySelector(".dots");
+const dotList = document.querySelectorAll(".dot");
 
-arrowLeft.addEventListener('click', function(ChangeSlide){
-	if(nextDot <= 0) {
-		nextDot = numero;
-	} else {
-		nextDot--
-	}
+const addSelected = () => {
+    for (let dot = 0; dot <= nbr__img; dot++) {
+      if (dot === etape) {
+        dotList[dot].classList.add("dot_selected");
+      } else {
+        dotList[dot].classList.remove("dot_selected");
+      }
+    }
+  };
+
+
+suivant.addEventListener('click', function() {
+    etape++;
+    if(etape >= nbr__img) {
+        etape = 0;
+    }
+    image.setAttribute("src","./assets/images/slideshow/" + slides[etape].image);
+	document.getElementById("textInfo").innerHTML = slides[etape].tagLine;
+    addSelected(etape);
+
 })
 
-arrowRight.addEventListener('click', function(ChangeSlide){
-	if(nextDot >= numero) {
-		nextDot = 0;
-	} else {
-		nextDot++
-	}
+precedent.addEventListener('click', function() {
+    etape--;
+    if(etape < 0) {
+        etape = nbr__img - 1;
+    }
+    image.setAttribute("src","./assets/images/slideshow/" + slides[etape].image);
+	document.getElementById("textInfo").innerHTML = slides[etape].tagLine;
+    addSelected(etape);
 })
-
-function ChangeSlide(sens) {
-	numero = numero + sens;
-	console.log(numero)
-	if (numero > 3)
-		numero = 0;
-	if (numero < 0 )
-		numero = 3;
-	image.setAttribute("src","./assets/images/slideshow/" + slides[numero].image);
-	document.getElementById("textInfo").innerHTML = slides[numero].tagLine;
-	let currentDot = document.querySelector(".dot_selected");
-	let nextDot = currentDot.nextElementSibling;
-	
-	if(nextDot) {
-		currentDot.classList.remove("dot_selected")
-		nextDot.classList.add("dot_selected")
-	}
-	console.log("ça change !");
-};
-document.getElementById("textInfo").
