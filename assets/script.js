@@ -35,8 +35,8 @@ const addSelected = () => {
       if (dot === etape) {
         dotList[dot].classList.add("dot_selected");
       }
-    }
-  };
+  }
+};
 
 suivant.addEventListener('click', function() {
     etape++;
