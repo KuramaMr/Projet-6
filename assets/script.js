@@ -46,7 +46,7 @@ suivant.addEventListener('click', function() {
     }
 
     image.setAttribute("src","./assets/images/slideshow/" + slides[etape].image);
-	  document.getElementById("textInfo").innerHTML = slides[etape].tagLine;
+	document.getElementById("textInfo").innerHTML = slides[etape].tagLine;
     addSelected(etape);
 
 })
@@ -59,6 +59,6 @@ precedent.addEventListener('click', function() {
     }
 
     image.setAttribute("src","./assets/images/slideshow/" + slides[etape].image);
-	  document.getElementById("textInfo").innerHTML = slides[etape].tagLine;
+	document.getElementById("textInfo").innerHTML = slides[etape].tagLine;
     addSelected(etape);
 })
